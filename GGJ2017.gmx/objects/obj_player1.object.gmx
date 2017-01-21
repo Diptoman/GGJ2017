@@ -81,12 +81,26 @@ if (inputdog_down("Change", 1))
 {
     _yspd = -obj_control._baseSpeed * obj_control._levelModifier;
 }
+else if (inputdog_down("Select", 1))
+{
+    _yspd = obj_control._baseSpeed * obj_control._levelModifier;
+}
 else
 {
-    if (y &lt;= room_height/2 - 16)
-        _yspd = obj_control._baseSpeed * obj_control._levelModifier;
+    if (!(y == room_height/2))
+    {
+        if ((!inputdog_down("Select", 1)) &amp;&amp; (!inputdog_down("Change", 1)))
+        {
+            if (y &lt; room_height/2)
+                _yspd = 4;
+            else if (y &gt; room_height/2)
+                _yspd = -4;
+        }
+    }
     else
+    {
         _yspd = 0;
+    }
 }
 
 if (inputdog_pressed("Change", 1))
@@ -94,7 +108,7 @@ if (inputdog_pressed("Change", 1))
     _blocked = true;
     alarm[0] = sign(_yspd) * _yspd / 3;
 }
-else if (inputdog_released("Change", 1))
+else if (inputdog_pressed("Select", 1))
 {
     _blocked = true;
     alarm[0] = sign(_yspd) * _yspd / 3;
