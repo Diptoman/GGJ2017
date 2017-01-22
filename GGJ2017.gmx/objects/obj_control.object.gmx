@@ -54,7 +54,7 @@ scr_readAudioData("BGM_Fast", _mapBgmFast);
 _mapBgmSlow = scr_createGenerator();
 scr_readAudioData("BGM_Slow", _mapBgmSlow);
 
-scr_setGenerator(_mapBgmFast, snd_bgm_fast);
+scr_setGenerator(_mapBgmSlow, snd_bgm_slow);
 </string>
           </argument>
         </arguments>
