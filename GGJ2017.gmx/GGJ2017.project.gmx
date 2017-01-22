@@ -285,7 +285,7 @@
     </scripts>
     <scripts name="Challenge">
       <script>scripts\scr_createObstacle.gml</script>
-      <script>scripts\scr_addToGenerator.gml</script>
+      <script>scripts\scr_setGenerator.gml</script>
       <script>scripts\scr_readAudioData.gml</script>
     </scripts>
   </scripts>

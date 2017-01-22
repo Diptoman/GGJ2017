@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>_baseSpeed = 2;
-_levelModifier = 6;
+_levelModifier = 40;
 
 //alarm[0] = 180;
 
@@ -43,14 +43,12 @@ enum obstacleSide
     Bottom
 }
 
-scr_setGenerator();
-scr_readAudioData("BGM_Fast");
-audio_play_sound(snd_bgm_fast, 10, 1);
+_mapBgmFast = scr_createGenerator();
+scr_readAudioData("BGM_Fast", _mapBgmFast);
+_mapBgmSlow = scr_createGenerator();
+scr_readAudioData("BGM_Slow", _mapBgmSlow);
 
-//scr_addToGenerator(60, obstacleType.Triangle, obstacleSide.Both, 4);
-//scr_addToGenerator(60, obstacleType.Triangle, obstacleSide.Both, 10);
-
-alarm[1] = ds_grid_get(_generatorMap, _currentWidth, 0);
+scr_setGenerator(_mapBgmFast, snd_bgm_fast);
 </string>
           </argument>
         </arguments>
@@ -73,12 +71,12 @@ alarm[1] = ds_grid_get(_generatorMap, _currentWidth, 0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = ds_grid_get(_generatorMap, _currentWidth, 1);
-sideType = ds_grid_get(_generatorMap, _currentWidth, 2);
-size = ds_grid_get(_generatorMap, _currentWidth, 3);
+            <string>type = ds_grid_get(_currentMap, _currentWidth, 1);
+sideType = ds_grid_get(_currentMap, _currentWidth, 2);
+size = ds_grid_get(_currentMap, _currentWidth, 3);
 scr_createObstacle(type, sideType, size);
 _currentWidth += 1;
-alarm[1] = ds_grid_get(_generatorMap, _currentWidth, 0);
+alarm[1] = ds_grid_get(_currentMap, _currentWidth, 0);
 </string>
           </argument>
         </arguments>

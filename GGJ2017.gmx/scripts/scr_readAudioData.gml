@@ -1,9 +1,13 @@
 //argument0 -> fileName
+//Argument1 -> GeneratorMap
 file = file_text_open_read(working_directory + "\" + argument0 + ".txt");
-show_message(string(file));
 var num = 0;
 var timeStamp = 0, prevTimeStamp = 0, actualTimeStamp = 0, finalTimeStamp;
 var size = 1;
+
+var tempo = file_text_readln(file);
+scr_addTempoDataToGenerator(argument1, real(tempo));
+
 while (!file_text_eof(file))
 {
     str[num] = file_text_readln(file);
@@ -25,11 +29,9 @@ while (!file_text_eof(file))
     if ((actualTimeStamp - prevTimeStamp) < 0)
         finalTimeStamp = 0.01;    
     else
-        finalTimeStamp = actualTimeStamp - prevTimeStamp;
-        
-    //show_message(string(finalTimeStamp));
+        finalTimeStamp = actualTimeStamp - prevTimeStamp;        
     
-    scr_addToGenerator(finalTimeStamp * room_speed, obstacleType.Triangle, obstacleSide.Both, size);
+    scr_addToGenerator(argument1, finalTimeStamp * room_speed, obstacleType.Triangle, obstacleSide.Both, size);
     num ++;
 }
 file_text_close(file);
