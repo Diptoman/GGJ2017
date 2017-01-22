@@ -49,7 +49,9 @@ enum obstacleSide
     BottomDown
 }
 
-scr_createLevel("BGM_slow", "BGM_Medium", "BGM_Fast", snd_bgm_slow, snd_bgm_medium, snd_bgm_fast);
+global.syncTime = 0;
+global.scr = 0;
+global.maxMult = 1;
 
 _pulse = false;
 
@@ -90,6 +92,7 @@ if (_currentAudioGridPos &lt; 5)
 else
 {
     //Win
+    room_goto(rm_end);
 }
 </string>
           </argument>
@@ -138,6 +141,9 @@ room_restart();
           <argument>
             <kind>1</kind>
             <string>_multiplier += 1;
+
+if (_multiplier &gt; global.maxMult)
+    global.maxMult = _multiplier;
 
 if (obj_control._dead == false)
 {
@@ -279,6 +285,7 @@ if (abs(abs(room_height/2 - obj_player1.y) - abs(room_height/2 - obj_player2.y))
 else
 {
     _currentSync = true;
+    global.syncTime += 1;
 }
 
 if (_prevSync == true) &amp;&amp; (_currentSync == false)
@@ -291,6 +298,7 @@ if (_prevSync == true) &amp;&amp; (_currentSync == false)
 }
 
 _score += _multiplier * ds_grid_get(_currentMap,0,0);
+global.scr = _score;
 
 //Backgroundspeed
 background_hspeed = - _baseSpeed * _levelModifier;

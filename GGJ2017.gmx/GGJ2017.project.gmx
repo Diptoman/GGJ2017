@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="17" name="datafiles">
+  <datafiles number="21" name="datafiles">
     <datafile>
       <name>Instructions.pdf</name>
       <exists>-1</exists>
@@ -21,7 +21,7 @@
       </ConfigOptions>
       <filename>Instructions.pdf</filename>
     </datafile>
-    <datafiles number="17" name="TweenGMS">
+    <datafiles number="21" name="TweenGMS">
       <datafile>
         <name>Starter_Guide.html</name>
         <exists>-1</exists>
@@ -109,24 +109,7 @@
       </datafile>
     </datafiles>
     <datafile>
-      <name>BGM_Fast.txt</name>
-      <exists>-1</exists>
-      <size>261</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>BGM_Fast.txt</filename>
-    </datafile>
-    <datafile>
-      <name>BGM_Slow.txt</name>
+      <name>BGM_Slow._oldtxt</name>
       <exists>-1</exists>
       <size>181</size>
       <exportAction>2</exportAction>
@@ -140,10 +123,27 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>BGM_Slow.txt</filename>
+      <filename>BGM_Slow._oldtxt</filename>
     </datafile>
     <datafile>
-      <name>BGM_Medium.txt</name>
+      <name>Level1_Slow.txt</name>
+      <exists>-1</exists>
+      <size>181</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level1_Slow.txt</filename>
+    </datafile>
+    <datafile>
+      <name>Level1_Medium.txt</name>
       <exists>-1</exists>
       <size>342</size>
       <exportAction>2</exportAction>
@@ -157,7 +157,24 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>BGM_Medium.txt</filename>
+      <filename>Level1_Medium.txt</filename>
+    </datafile>
+    <datafile>
+      <name>Level1_Fast.txt</name>
+      <exists>-1</exists>
+      <size>261</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level1_Fast.txt</filename>
     </datafile>
   </datafiles>
   <NewExtensions>
@@ -211,6 +228,12 @@
     <sprite>sprites\spr_zigzag</sprite>
     <sprite>sprites\s_player</sprite>
     <sprite>sprites\s_gui</sprite>
+    <sprites name="UI">
+      <sprite>sprites\spr_pulse</sprite>
+      <sprite>sprites\spr_base</sprite>
+      <sprite>sprites\scr_score</sprite>
+      <sprite>sprites\spr_levelUI</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_grid</background>
@@ -367,11 +390,22 @@
     <object>objects\obj_death</object>
     <object>objects\obj_p1ghost</object>
     <object>objects\obj_p2ghost</object>
-    <object>objects\obj_text</object>
+    <objects name="UI">
+      <object>objects\obj_text</object>
+      <object>objects\obj_UIbase</object>
+      <object>objects\obj_levelUI</object>
+      <object>objects\obj_header</object>
+      <object>objects\obj_score</object>
+      <object>objects\obj_sync</object>
+      <object>objects\obj_maxmult</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="inputdog">
       <room>rooms\rInitInputManager</room>
+      <room>rooms\rm_Menu</room>
+      <room>rooms\rm_end</room>
+      <room>rooms\rm_level1</room>
       <room>rooms\rExampleRoom</room>
       <room>rooms\rExampleInputRemapping</room>
     </rooms>
