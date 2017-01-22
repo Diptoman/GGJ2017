@@ -8,9 +8,8 @@ image_index = playerSlot - 1;
 
 y += _yspd;
 
-if (instance_position(x, y, obj_switcharea))
+if (instance_position(x, y, obj_switchzone))
 {
-    obj_control._timeScale = .25;
     if (inputdog_pressed("Select", playerSlot))
     {
         _canSwitch = true;

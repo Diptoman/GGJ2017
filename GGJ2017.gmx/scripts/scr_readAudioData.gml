@@ -5,6 +5,7 @@ var num = 0;
 var timeStamp = 0, prevTimeStamp = 0, actualTimeStamp = 0, finalTimeStamp;
 var size = 1;
 var obsType = 0, realObsType = obstacleType.Normal;
+var obsSide = 0, realObsSide = obstacleSide.BothDown;
 var sdType = obstacleSide.BothDown;
 
 var tempo = file_text_readln(file);
@@ -48,6 +49,40 @@ while (!file_text_eof(file))
             break;
     }
     
+    //Replace
+    str[num] = string_replace(str[num],string_copy(str[num],0,pos), "");
+    
+    //Get fourth comma (obstacleSide)
+    pos = string_pos(",",str[num]);
+    obsSide = real(string_copy(str[num],0, pos - 1));
+    
+    switch(obsSide)
+    {
+        case 0:
+            realObsSide = obstacleSide.BothUp;
+            break;
+            
+        case 1:
+            realObsSide = obstacleSide.BothDown;
+            break;
+            
+        case 2:
+            realObsSide = obstacleSide.TopUp;
+            break;
+            
+        case 3:
+            realObsSide = obstacleSide.TopDown;
+            break;
+            
+        case 4:
+            realObsSide = obstacleSide.BottomUp;
+            break;
+            
+        case 5:
+            realObsSide = obstacleSide.BottomDown;
+            break;
+    }
+    
     //Set actual times
     actualTimeStamp = timeStamp - ((room_width/2)/(obj_control._baseSpeed * obj_control._levelModifier * room_speed));
     
@@ -56,10 +91,8 @@ while (!file_text_eof(file))
     else
         finalTimeStamp = actualTimeStamp - prevTimeStamp; 
         
-    //Choose a sideType
-    sdType = choose(obstacleSide.BothUp, obstacleSide.TopUp, obstacleSide.BottomUp, obstacleSide.BothDown, obstacleSide.TopDown, obstacleSide.BottomDown);
     
-    scr_addToGenerator(argument1, finalTimeStamp * room_speed, realObsType, sdType, size);
+    scr_addToGenerator(argument1, finalTimeStamp * room_speed, realObsType, realObsSide, size);
     num ++;
 }
 file_text_close(file);
