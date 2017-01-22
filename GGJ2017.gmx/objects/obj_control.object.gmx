@@ -26,7 +26,120 @@
           <argument>
             <kind>1</kind>
             <string>_baseSpeed = 2;
-_levelModifier = 2;
+_levelModifier = 4;
+
+alarm[0] = 180;
+
+enum obstacleType
+{
+    Triangle,
+    Square
+}
+
+enum obstacleSide
+{
+    Both,
+    Top,
+    Bottom
+}
+
+scr_setGenerator();
+scr_readAudioData("SongTest");
+
+//scr_addToGenerator(60, obstacleType.Triangle, obstacleSide.Both, 4);
+//scr_addToGenerator(60, obstacleType.Triangle, obstacleSide.Both, 10);
+
+alarm[1] = ds_grid_get(_generatorMap, _currentWidth, 0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>type = ds_grid_get(_generatorMap, _currentWidth, 1);
+sideType = ds_grid_get(_generatorMap, _currentWidth, 2);
+size = ds_grid_get(_generatorMap, _currentWidth, 3);
+scr_createObstacle(type, sideType, size);
+_currentWidth += 1;
+alarm[1] = ds_grid_get(_generatorMap, _currentWidth, 0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(room_width + 96, room_height/2 - 180, obj_switcharea);
+instance_create(room_width + 96, room_height/2 + 180, obj_switcharea);
+alarm[0] = 180;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if ((obj_player1._canSwitch == true) &amp;&amp; (obj_player2._canSwitch == true))
+    {
+        p1y = obj_player1.y;
+        p2y = obj_player2.y;
+        obj_player1._type = -obj_player1._type;
+        obj_player2._type = -obj_player2._type;
+        obj_player1._canSwitch = false;
+        obj_player2._canSwitch = false;
+        obj_player1._canControl = false;
+        obj_player2._canControl = false;
+        obj_player1.alarm[1] = room_speed/2;
+        obj_player2.alarm[1] = room_speed/2;
+        TweenFire(obj_player1, y__, EaseOutQuad, TWEEN_MODE_ONCE, true, 0, .5, obj_player1.y, p2y);
+        TweenFire(obj_player2, y__, EaseOutQuad, TWEEN_MODE_ONCE, true, 0, .5, obj_player2.y, p1y);
+    }
 </string>
           </argument>
         </arguments>
@@ -49,13 +162,13 @@ _levelModifier = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (abs(abs(room_height/2 - obj_player1.y) - abs(room_height/2 - obj_player2.y)) &gt; 32)
+            <string>if (abs(abs(room_height/2 - obj_player1.y) - abs(room_height/2 - obj_player2.y)) &gt; 96)
 {
-    draw_text(0, 0, "OUT OF SYNC");
+    draw_text(0, 0, "OUT OF SYNC" + string(alarm[1]));
 }
 else
 {
-    draw_text(0, 0, "IN SYNC");
+    draw_text(0, 0, "IN SYNC" + string(alarm[1]));
 }
 </string>
           </argument>

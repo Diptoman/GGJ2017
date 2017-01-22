@@ -27,9 +27,32 @@
             <kind>1</kind>
             <string>_yspd = 0;
 _blocked = false;
-
-_prevPointX = x;
-_prevPointY = y;
+_type = 1;
+image_speed = 0;
+_canControl = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>_canControl = true;
 </string>
           </argument>
         </arguments>
@@ -75,7 +98,9 @@ _prevPointY = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y += _yspd;
+            <string>scr_move(1);
+/*
+y += _yspd;
 
 if (inputdog_down("Change", 1))
 {
@@ -104,7 +129,7 @@ if (!_blocked)
 {
     inst = instance_create(x, y, obj_trail);
     inst._angle = sign(_yspd) * -45;
-}
+}*/
 </string>
           </argument>
         </arguments>
