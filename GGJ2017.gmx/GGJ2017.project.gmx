@@ -164,6 +164,8 @@
     <extension index="0">extensions\Input Dog</extension>
     <extension index="1">extensions\Draw Trail</extension>
     <extension index="2">extensions\TweenGMS</extension>
+    <extension index="3">extensions\Saturation Shader</extension>
+    <extension index="4">extensions\Draw Text Outlined</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_bgm_fast</sound>
@@ -174,6 +176,7 @@
       <sound>sound\snd_begin</sound>
       <sound>sound\snd_timeSpeedDown</sound>
       <sound>sound\snd_timeSpeedUp</sound>
+      <sound>sound\snd_die</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -196,6 +199,7 @@
       <sprite>sprites\spr_pulse5</sprite>
       <sprite>sprites\spr_floating2</sprite>
       <sprite>sprites\spr_pulse6</sprite>
+      <sprite>sprites\spr_area</sprite>
     </sprites>
     <sprites name="inputdog">
       <sprite>sprites\sDogBark</sprite>
@@ -205,9 +209,14 @@
       <sprite>sprites\sThinButton</sprite>
     </sprites>
     <sprite>sprites\spr_zigzag</sprite>
+    <sprite>sprites\s_player</sprite>
+    <sprite>sprites\s_gui</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_grid</background>
+    <background>background\b_back</background>
+    <background>background\b_hills</background>
+    <background>background\b_objects</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -300,17 +309,24 @@
       <script>scripts\scr_move.gml</script>
       <script>scripts\scr_pulse.gml</script>
       <script>scripts\scr_die.gml</script>
+      <script>scripts\scr_resetMultiplier.gml</script>
     </scripts>
     <scripts name="Challenge">
       <script>scripts\scr_createObstacle.gml</script>
       <script>scripts\scr_setGenerator.gml</script>
       <script>scripts\scr_readAudioData.gml</script>
     </scripts>
+    <script>scripts\draw_text_outline.gml</script>
+    <script>scripts\scr_createLevel.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\sh_saturation.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <fonts name="inputdog">
       <font>fonts\fButton</font>
     </fonts>
+    <font>fonts\fnt_UI</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_player1</object>
@@ -348,6 +364,10 @@
     <object>objects\obj_floatingObstacle</object>
     <object>objects\obj_obsParent</object>
     <object>objects\obj_pulse</object>
+    <object>objects\obj_death</object>
+    <object>objects\obj_p1ghost</object>
+    <object>objects\obj_p2ghost</object>
+    <object>objects\obj_text</object>
   </objects>
   <rooms name="rooms">
     <rooms name="inputdog">
@@ -355,6 +375,7 @@
       <room>rooms\rExampleRoom</room>
       <room>rooms\rExampleInputRemapping</room>
     </rooms>
+    <room>rooms\r_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

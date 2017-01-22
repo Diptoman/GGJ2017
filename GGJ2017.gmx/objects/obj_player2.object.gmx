@@ -30,6 +30,11 @@ _blocked = false;
 _type = -1;
 image_speed = 0;
 _canControl = true;
+
+image_index = 1;
+image_speed = 0;
+
+inst = instance_create(x,y,obj_p2ghost);
 </string>
           </argument>
         </arguments>

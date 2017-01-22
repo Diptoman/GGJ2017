@@ -1,14 +1,16 @@
 #define scr_setGenerator
-//Argument0 -> Map to read from
-//Argument1 -> Audio to play
+//Argument1 -> pos
 _pos = 0;
 _currentWidth = 1;
-_currentMap = argument0;
-audio_play_sound(argument1, 10, 1);
+_currentMap = ds_grid_get(_order, _currentAudioGridPos, 0);
+audio_play_sound(ds_grid_get(_order, _currentAudioGridPos, 1), 10, 0);
+
 //Set tempo
 _levelModifier = 3 + ds_grid_get(_currentMap, 0, 0);
 //Set first time
 alarm[1] = ds_grid_get(_currentMap, _currentWidth, 0);
+//Set time for ending
+alarm[5] = ds_grid_get(_order, _currentAudioGridPos, 2) * room_speed;
 
 #define scr_addToGenerator
 var generatorMap = argument0;

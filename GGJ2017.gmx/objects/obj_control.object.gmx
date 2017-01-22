@@ -49,18 +49,103 @@ enum obstacleSide
     BottomDown
 }
 
-_mapBgmFast = scr_createGenerator();
-scr_readAudioData("BGM_Fast", _mapBgmFast);
-_mapBgmSlow = scr_createGenerator();
-scr_readAudioData("BGM_Slow", _mapBgmSlow);
-_mapBgmMedium = scr_createGenerator();
-scr_readAudioData("BGM_Medium", _mapBgmMedium);
-
-scr_setGenerator(_mapBgmMedium, snd_bgm_medium);
+scr_createLevel("BGM_slow", "BGM_Medium", "BGM_Fast", snd_bgm_slow, snd_bgm_medium, snd_bgm_fast);
 
 _pulse = false;
 
-_shifted = 0;
+_score = 0;
+
+_multiplier = 1;
+alarm[3] = (_multiplier + 4) * room_speed;
+
+_prevSync = true;
+_currentSync = true;
+
+_dead = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>_currentAudioGridPos += 1;
+if (_currentAudioGridPos &lt; 5)
+    scr_setGenerator();
+else
+{
+    //Win
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_stop_all();
+room_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>_multiplier += 1;
+
+if (obj_control._dead == false)
+{
+    a = instance_create(room_width, room_height/2, obj_text);
+    a._string = "MULTIPLIER + 1";
+}
+
+alarm[3] = (_multiplier + 4) * room_speed;
 </string>
           </argument>
         </arguments>
@@ -137,9 +222,9 @@ alarm[2] = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(room_width + 96, room_height/2 - 180, obj_switcharea);
-instance_create(room_width + 96, room_height/2 + 180, obj_switcharea);
-alarm[0] = 180;
+            <string>//instance_create(room_width + 96, room_height/2 - 180, obj_switcharea);
+//instance_create(room_width + 96, room_height/2 + 180, obj_switcharea);
+//alarm[0] = 180;
 </string>
           </argument>
         </arguments>
@@ -180,7 +265,35 @@ alarm[0] = 180;
         audio_play_sound(snd_switchSuccess,10,0);
         rect = collision_rectangle(obj_player1.x - 16, obj_player1.y - 16, obj_player1.x + 16, obj_player1.y + 16, obj_switchzone, 0, 0);
         rect._shifted = 2;
+        
+        //Multiplier
+        _score += 100 * _multiplier * ds_grid_get(_currentMap,0,0);
     }
+    
+//Sync
+_prevSync = _currentSync;
+if (abs(abs(room_height/2 - obj_player1.y) - abs(room_height/2 - obj_player2.y)) &gt; 96)
+{  
+    _currentSync = false;
+}
+else
+{
+    _currentSync = true;
+}
+
+if (_prevSync == true) &amp;&amp; (_currentSync == false)
+{
+        //Do stuff
+        _multiplier = 1;
+        alarm[3] = (_multiplier + 4) * room_speed;
+        a = instance_create(room_width, room_height/2, obj_text);
+        a._string = "OUT OF SYNC!";
+}
+
+_score += _multiplier * ds_grid_get(_currentMap,0,0);
+
+//Backgroundspeed
+background_hspeed = - _baseSpeed * _levelModifier;
 </string>
           </argument>
         </arguments>
@@ -203,14 +316,9 @@ alarm[0] = 180;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (abs(abs(room_height/2 - obj_player1.y) - abs(room_height/2 - obj_player2.y)) &gt; 96)
-{
-    draw_text(0, 0, "OUT OF SYNC" + string(_shifted));
-}
-else
-{
-    draw_text(0, 0, "IN SYNC" + string(_shifted));
-}
+            <string>draw_text(0, 0, "SCORE " + string(_score) + "  Multiplier " + string(_multiplier));
+
+
 </string>
           </argument>
         </arguments>

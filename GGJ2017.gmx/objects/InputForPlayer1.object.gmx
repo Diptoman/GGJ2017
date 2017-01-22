@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///inputs
 inputdog_add_input("Change",     vk_up,      gp_face1);
-inputdog_add_input("Select",   vk_down,    inputdog_gp_left_stick_down);
+inputdog_add_input("Select",   vk_down,    inputdog_gp_right_trigger);
 </string>
           </argument>
         </arguments>

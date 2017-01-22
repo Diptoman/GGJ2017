@@ -6,6 +6,9 @@ image_yscale = 2;
 var playerSlot = argument0;
 image_index = playerSlot - 1;
 
+if (obj_control._dead)
+   { _yspd = 0; image_angle = 0; }
+
 y += _yspd;
 
 if (y < 0) || (y > room_height)
@@ -69,9 +72,17 @@ else if (inputdog_released("Change", playerSlot))
 }
 }
 
-//if (!_blocked)
+if (obj_control._dead == false)
 {
     inst = instance_create(x, y, obj_trail);
     inst._angle = sign(_yspd) * -45;
     inst.playerSlot = playerSlot;
 }
+else
+{
+    inst = instance_create(x, y, obj_trail);
+    inst._angle = 0;
+    inst.playerSlot = playerSlot;
+}
+
+image_angle = sign(_yspd) * -45;

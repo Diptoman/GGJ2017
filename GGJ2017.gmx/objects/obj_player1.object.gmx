@@ -30,6 +30,10 @@ _blocked = false;
 _type = 1;
 image_speed = 0;
 _canControl = true;
+
+image_speed = 0;
+
+inst = instance_create(x,y,obj_p1ghost);
 </string>
           </argument>
         </arguments>
@@ -99,37 +103,6 @@ _canControl = true;
           <argument>
             <kind>1</kind>
             <string>scr_move(1);
-/*
-y += _yspd;
-
-if (inputdog_down("Change", 1))
-{
-    _yspd = -obj_control._baseSpeed * obj_control._levelModifier;
-}
-else
-{
-    if (y &lt;= room_height/2 - 16)
-        _yspd = obj_control._baseSpeed * obj_control._levelModifier;
-    else
-        _yspd = 0;
-}
-
-if (inputdog_pressed("Change", 1))
-{
-    _blocked = true;
-    alarm[0] = sign(_yspd) * _yspd / 3;
-}
-else if (inputdog_released("Change", 1))
-{
-    _blocked = true;
-    alarm[0] = sign(_yspd) * _yspd / 3;
-}
-
-if (!_blocked)
-{
-    inst = instance_create(x, y, obj_trail);
-    inst._angle = sign(_yspd) * -45;
-}*/
 </string>
           </argument>
         </arguments>
