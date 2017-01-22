@@ -2,12 +2,12 @@
 file = file_text_open_read(working_directory + "\" + argument0 + ".txt");
 show_message(string(file));
 var num = 0;
-var timeStamp = 0, prevTimeStamp = 0;
+var timeStamp = 0, prevTimeStamp = 0, actualTimeStamp = 0, finalTimeStamp;
 var size = 1;
 while (!file_text_eof(file))
 {
     str[num] = file_text_readln(file);
-    prevTimeStamp = timeStamp;
+    prevTimeStamp = actualTimeStamp;
     
     //Get first comma
     pos = string_pos(",",str[num]);
@@ -20,7 +20,16 @@ while (!file_text_eof(file))
     pos = string_pos(",",str[num]);
     size = real(string_copy(str[num],0, pos - 1));
     
-    scr_addToGenerator((timeStamp - prevTimeStamp) * room_speed, obstacleType.Triangle, obstacleSide.Both, size);
+    actualTimeStamp = timeStamp - ((room_width/2)/(obj_control._baseSpeed * obj_control._levelModifier * room_speed));
+    
+    if ((actualTimeStamp - prevTimeStamp) < 0)
+        finalTimeStamp = 0.01;    
+    else
+        finalTimeStamp = actualTimeStamp - prevTimeStamp;
+        
+    //show_message(string(finalTimeStamp));
+    
+    scr_addToGenerator(finalTimeStamp * room_speed, obstacleType.Triangle, obstacleSide.Both, size);
     num ++;
 }
 file_text_close(file);

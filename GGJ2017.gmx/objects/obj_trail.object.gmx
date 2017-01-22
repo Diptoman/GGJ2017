@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>TweenFire(id, image_scale__, EaseInOutQuad, TWEEN_MODE_ONCE, true, 0, 2, 1, 0);
+            <string>TweenFire(id, image_yscale__, EaseInOutQuad, TWEEN_MODE_ONCE, true, 0, 2, 1, 0);
 alarm[0] = room_speed * 2;
 _angle = 0;
 </string>
@@ -73,7 +73,7 @@ _angle = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x -= obj_control._baseSpeed * obj_control._levelModifier;
+            <string>x -= obj_control._baseSpeed * 4;//* obj_control._levelModifier;
 image_angle = _angle;
 
 image_index = playerSlot - 1;
