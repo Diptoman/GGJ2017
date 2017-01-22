@@ -99,7 +99,10 @@ if (alarm[0] &lt; 0)
     }
 }    
 if (inputdog_pressed("Change") || inputdog_pressed("Enter"))
-    room_goto(_level);
+{
+    if (selected == _levelNum)
+        room_goto(_level);
+}
 </string>
           </argument>
         </arguments>

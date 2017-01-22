@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_player1" x="544" y="432" name="inst_AE34D562" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_control" x="0" y="0" name="inst_52C87A52" locked="0" code="scr_createLevel(&quot;Level1_Fast&quot;, &quot;Level1_Medium&quot;, &quot;Level1_Fast&quot;, snd_bgm_slow, snd_bgm_medium, snd_bgm_fast);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_control" x="0" y="0" name="inst_52C87A52" locked="0" code="scr_createLevel(&quot;Level4_Slow&quot;, &quot;Level4_Medium&quot;, &quot;Level4_Fast&quot;, snd_bgm_level4_slow, snd_bgm_level4_medium, snd_bgm_level4_fast);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player2" x="544" y="336" name="inst_2EF030DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

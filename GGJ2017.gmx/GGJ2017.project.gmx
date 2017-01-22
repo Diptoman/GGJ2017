@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="21" name="datafiles">
+  <datafiles number="29" name="datafiles">
     <datafile>
       <name>Instructions.pdf</name>
       <exists>-1</exists>
@@ -21,7 +21,7 @@
       </ConfigOptions>
       <filename>Instructions.pdf</filename>
     </datafile>
-    <datafiles number="21" name="TweenGMS">
+    <datafiles number="29" name="TweenGMS">
       <datafile>
         <name>Starter_Guide.html</name>
         <exists>-1</exists>
@@ -176,6 +176,125 @@
       </ConfigOptions>
       <filename>Level1_Fast.txt</filename>
     </datafile>
+    <datafile>
+      <name>Level3_Medium.txt</name>
+      <exists>-1</exists>
+      <size>274</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level3_Medium.txt</filename>
+    </datafile>
+    <datafile>
+      <name>Level2_Slow.txt</name>
+      <exists>-1</exists>
+      <size>266</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level2_Slow.txt</filename>
+    </datafile>
+    <datafile>
+      <name>Level2_Medium2.txt</name>
+      <exists>-1</exists>
+      <size>223</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level2_Medium2.txt</filename>
+    </datafile>
+    <datafile>
+      <name>Level2_Fast.txt</name>
+      <exists>-1</exists>
+      <size>294</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level2_Fast.txt</filename>
+    </datafile>
+    <datafile>
+      <name>Level4_Medium.txt</name>
+      <exists>-1</exists>
+      <size>396</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level4_Medium.txt</filename>
+    </datafile>
+    <datafile>
+      <name>Level4_Fast.txt</name>
+      <exists>-1</exists>
+      <size>350</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level4_Fast.txt</filename>
+    </datafile>
+    <datafile>
+      <name>Level4_Slow.txt</name>
+      <exists>-1</exists>
+      <size>190</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Level4_Slow.txt</filename>
+    </datafile>
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Input Dog</extension>
@@ -195,6 +314,12 @@
       <sound>sound\snd_timeSpeedUp</sound>
       <sound>sound\snd_die</sound>
     </sounds>
+    <sound>sound\snd_bgm_level2_slow</sound>
+    <sound>sound\snd_bgm_level2_medium</sound>
+    <sound>sound\snd_bgm_level2_fast</sound>
+    <sound>sound\snd_bgm_level4_slow</sound>
+    <sound>sound\snd_bgm_level4_medium</sound>
+    <sound>sound\snd_bgm_level4_fast</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="External">
@@ -406,6 +531,8 @@
       <room>rooms\rm_Menu</room>
       <room>rooms\rm_end</room>
       <room>rooms\rm_level1</room>
+      <room>rooms\rm_level2</room>
+      <room>rooms\rm_level3</room>
       <room>rooms\rExampleRoom</room>
       <room>rooms\rExampleInputRemapping</room>
     </rooms>
