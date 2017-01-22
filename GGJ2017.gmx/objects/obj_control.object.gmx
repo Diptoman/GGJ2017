@@ -32,15 +32,19 @@ _levelModifier = 40;
 
 enum obstacleType
 {
-    Triangle,
-    Square
+    Switcher,
+    Normal,
+    Floating
 }
 
 enum obstacleSide
 {
-    Both,
-    Top,
-    Bottom
+    BothUp,
+    BothDown,
+    TopUp,
+    TopDown,
+    BottomUp,
+    BottomDown
 }
 
 _mapBgmFast = scr_createGenerator();

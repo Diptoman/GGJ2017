@@ -325,6 +325,7 @@
     </objects>
     <object>objects\obj_switcharea</object>
     <object>objects\obj_baseObstacle</object>
+    <object>objects\obj_baseObstacleShadow</object>
   </objects>
   <rooms name="rooms">
     <rooms name="inputdog">
