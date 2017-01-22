@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="6" name="datafiles">
+  <datafiles number="8" name="datafiles">
     <datafile>
       <name>Instructions.pdf</name>
       <exists>-1</exists>
@@ -21,7 +21,7 @@
       </ConfigOptions>
       <filename>Instructions.pdf</filename>
     </datafile>
-    <datafiles number="6" name="TweenGMS">
+    <datafiles number="8" name="TweenGMS">
       <datafile>
         <name>Starter_Guide.html</name>
         <exists>-1</exists>
@@ -108,6 +108,23 @@
         <filename>Required Changes.txt</filename>
       </datafile>
     </datafiles>
+    <datafile>
+      <name>SongTest.txt</name>
+      <exists>-1</exists>
+      <size>12</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>SongTest.txt</filename>
+    </datafile>
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Input Dog</extension>
@@ -118,9 +135,10 @@
   <sprites name="sprites">
     <sprites name="External">
       <sprite>sprites\spr_test</sprite>
-      <sprite>sprites\spr_test2</sprite>
+      <sprite>sprites\spr_trail</sprite>
       <sprite>sprites\spr_main</sprite>
-      <sprite>sprites\spr_main2</sprite>
+      <sprite>sprites\spr_switcharea</sprite>
+      <sprite>sprites\spr_triangle</sprite>
     </sprites>
     <sprites name="inputdog">
       <sprite>sprites\sDogBark</sprite>
@@ -176,11 +194,6 @@
       <script>scripts\inputdog_released.gml</script>
       <script>scripts\inputdog_set_rumble.gml</script>
     </scripts>
-    <script>scripts\draw_trail.gml</script>
-    <script>scripts\trail_init.gml</script>
-    <script>scripts\draw_trail_ext.gml</script>
-    <script>scripts\trail_calculate.gml</script>
-    <script>scripts\trail_destroy.gml</script>
     <scripts name="TweenGMS">
       <scripts name="Core">
         <script>scripts\Ease.gml</script>
@@ -226,6 +239,14 @@
         <script>scripts\TweenDefine.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Player">
+      <script>scripts\scr_move.gml</script>
+    </scripts>
+    <scripts name="Challenge">
+      <script>scripts\scr_createObstacle.gml</script>
+      <script>scripts\scr_addToGenerator.gml</script>
+      <script>scripts\scr_readAudioData.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <fonts name="inputdog">
@@ -234,6 +255,8 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_player1</object>
+    <object>objects\obj_trail</object>
+    <object>objects\obj_control</object>
     <object>objects\obj_player2</object>
     <objects name="inputdog">
       <objects name="ClickableButtons">
@@ -256,23 +279,17 @@
       <object>objects\InputManager</object>
       <object>objects\InputRemappingManager</object>
     </objects>
-    <object>objects\obj_trail1</object>
-    <object>objects\obj_trail_ext1</object>
-    <object>objects\obj_trail2</object>
-    <object>objects\obj_trail_ext2</object>
-    <object>objects\obj_spawner</object>
-    <object>objects\obj_trail</object>
     <objects name="TweenGMS">
       <object>objects\obj_SharedTweener</object>
     </objects>
-    <object>objects\obj_control</object>
+    <object>objects\obj_switcharea</object>
+    <object>objects\obj_triangleObstacle</object>
   </objects>
   <rooms name="rooms">
     <rooms name="inputdog">
       <room>rooms\rInitInputManager</room>
       <room>rooms\rExampleRoom</room>
       <room>rooms\rExampleInputRemapping</room>
-      <room>rooms\room_example</room>
     </rooms>
   </rooms>
   <help>
