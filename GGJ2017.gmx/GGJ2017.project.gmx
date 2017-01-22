@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="11" name="datafiles">
+  <datafiles number="14" name="datafiles">
     <datafile>
       <name>Instructions.pdf</name>
       <exists>-1</exists>
@@ -21,7 +21,7 @@
       </ConfigOptions>
       <filename>Instructions.pdf</filename>
     </datafile>
-    <datafiles number="11" name="TweenGMS">
+    <datafiles number="14" name="TweenGMS">
       <datafile>
         <name>Starter_Guide.html</name>
         <exists>-1</exists>
@@ -109,9 +109,9 @@
       </datafile>
     </datafiles>
     <datafile>
-      <name>SongTest.txt</name>
+      <name>BGM_Medium.txt</name>
       <exists>-1</exists>
-      <size>12</size>
+      <size>253</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -123,12 +123,12 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>SongTest.txt</filename>
+      <filename>BGM_Medium.txt</filename>
     </datafile>
     <datafile>
       <name>BGM_Slow.txt</name>
       <exists>-1</exists>
-      <size>130</size>
+      <size>157</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -145,7 +145,7 @@
     <datafile>
       <name>BGM_Fast.txt</name>
       <exists>-1</exists>
-      <size>198</size>
+      <size>261</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -180,6 +180,7 @@
       <sprite>sprites\spr_round1</sprite>
       <sprite>sprites\spr_round2</sprite>
       <sprite>sprites\spr_triangle3</sprite>
+      <sprite>sprites\spr_slowArea</sprite>
     </sprites>
     <sprites name="inputdog">
       <sprite>sprites\sDogBark</sprite>

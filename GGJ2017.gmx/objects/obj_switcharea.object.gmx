@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>image_xscale = 2;
 image_yscale = 2;
-x -= 8;
+
+
+x -= obj_control._baseSpeed * obj_control._levelModifier;
 </string>
           </argument>
         </arguments>

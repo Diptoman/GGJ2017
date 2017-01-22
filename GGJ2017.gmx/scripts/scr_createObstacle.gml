@@ -1,10 +1,22 @@
-obstacle = argument0;
-sideType = argument1;
-sizeOfObstacle = argument2;
-var inst, shadInst;
+#define scr_createObstacle
+var obstacle = argument0;
+var sideType = argument1;
+var sizeOfObstacle = argument2;
 
 if (obstacle == obstacleType.Normal)
 {
+    scr_createNormalObstacle(sideType, sizeOfObstacle);
+}
+else if (obstacle == obstacleType.Switcher)
+{
+    scr_createSwitcher(sideType, sizeOfObstacle);
+}
+
+#define scr_createNormalObstacle
+var inst, shadInst;
+var sideType = argument0;
+var sizeOfObstacle = argument1;
+
     //DOWN
     //Top obstacle
     if ((sideType == obstacleSide.TopDown) || (sideType == obstacleSide.BothDown))
@@ -74,4 +86,12 @@ if (obstacle == obstacleType.Normal)
         shadInst.sprite_index = inst2.sprite_index;
         shadInst._yDir = -1;
     }
-}
+
+#define scr_createSwitcher
+var inst, shadInst;
+var sideType = argument0;
+var sizeOfObstacle = argument1;
+
+instance_create(room_width + 96, room_height/2 - 180, obj_switcharea);
+instance_create(room_width + 96, room_height/2 + 180, obj_switcharea);
+

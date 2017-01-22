@@ -8,8 +8,9 @@ image_index = playerSlot - 1;
 
 y += _yspd;
 
-if (instance_position(x,y, obj_switcharea))
+if (instance_position(x, y, obj_switcharea))
 {
+    obj_control._timeScale = .25;
     if (inputdog_pressed("Select", playerSlot))
     {
         _canSwitch = true;
@@ -27,12 +28,12 @@ if (_type == 1)
 {
     if (inputdog_down("Change", playerSlot))
     {
-        _yspd = obj_control._baseSpeed * 4;// * obj_control._levelModifier;
+        _yspd = obj_control._baseSpeed * 4 * obj_control._timeScale;// * obj_control._levelModifier;
     }
     else
     {
         if (y >= room_height/2 + 48)
-            _yspd = -obj_control._baseSpeed * 4; // * obj_control._levelModifier;
+            _yspd = -obj_control._baseSpeed * 4 * obj_control._timeScale; // * obj_control._levelModifier;
         else
             _yspd = 0;
     }
@@ -41,12 +42,12 @@ else
 {
     if (inputdog_down("Change", playerSlot))
     {
-        _yspd = - obj_control._baseSpeed * 4;// * obj_control._levelModifier;
+        _yspd = - obj_control._baseSpeed * 4 * obj_control._timeScale;// * obj_control._levelModifier;
     }
     else
     {
         if (y <= room_height/2 - 48)
-            _yspd = obj_control._baseSpeed * 4;// * obj_control._levelModifier;
+            _yspd = obj_control._baseSpeed * 4 * obj_control._timeScale;// * obj_control._levelModifier;
         else
             _yspd = 0;
     }
