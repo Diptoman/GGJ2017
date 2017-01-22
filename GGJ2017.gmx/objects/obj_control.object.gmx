@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_baseSpeed = 2;
+            <string>randomize();
+_baseSpeed = 2;
 _levelModifier = 40;
 _timeScale = 1;
 
