@@ -9,14 +9,14 @@ while (!file_text_eof(file))
     str[num] = file_text_readln(file);
     prevTimeStamp = actualTimeStamp;
     
-    //Get first comma
+    //Get first comma (timestamp)
     pos = string_pos(",",str[num]);
     timeStamp = real(string_copy(str[num],0, pos - 1));
 
     //Replace
     str[num] = string_replace(str[num],string_copy(str[num],0,pos), "");
     
-    //Get second comma
+    //Get second comma (size)
     pos = string_pos(",",str[num]);
     size = real(string_copy(str[num],0, pos - 1));
     

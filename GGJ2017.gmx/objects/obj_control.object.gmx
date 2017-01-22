@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>_baseSpeed = 2;
-_levelModifier = 8;
+_levelModifier = 6;
 
-alarm[0] = 180;
+//alarm[0] = 180;
 
 enum obstacleType
 {

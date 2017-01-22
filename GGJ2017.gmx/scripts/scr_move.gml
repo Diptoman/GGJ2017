@@ -31,7 +31,7 @@ if (_type == 1)
     }
     else
     {
-        if (y >= room_height/2 + 16)
+        if (y >= room_height/2 + 48)
             _yspd = -obj_control._baseSpeed * 4; // * obj_control._levelModifier;
         else
             _yspd = 0;
@@ -45,7 +45,7 @@ else
     }
     else
     {
-        if (y <= room_height/2 - 16)
+        if (y <= room_height/2 - 48)
             _yspd = obj_control._baseSpeed * 4;// * obj_control._levelModifier;
         else
             _yspd = 0;

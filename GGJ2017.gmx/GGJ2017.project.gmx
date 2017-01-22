@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="10" name="datafiles">
+  <datafiles number="11" name="datafiles">
     <datafile>
       <name>Instructions.pdf</name>
       <exists>-1</exists>
@@ -21,7 +21,7 @@
       </ConfigOptions>
       <filename>Instructions.pdf</filename>
     </datafile>
-    <datafiles number="10" name="TweenGMS">
+    <datafiles number="11" name="TweenGMS">
       <datafile>
         <name>Starter_Guide.html</name>
         <exists>-1</exists>
@@ -145,7 +145,7 @@
     <datafile>
       <name>BGM_Fast.txt</name>
       <exists>-1</exists>
-      <size>262</size>
+      <size>198</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -175,7 +175,11 @@
       <sprite>sprites\spr_trail</sprite>
       <sprite>sprites\spr_main</sprite>
       <sprite>sprites\spr_switcharea</sprite>
-      <sprite>sprites\spr_triangle</sprite>
+      <sprite>sprites\spr_triangle1</sprite>
+      <sprite>sprites\spr_triangle2</sprite>
+      <sprite>sprites\spr_round1</sprite>
+      <sprite>sprites\spr_round2</sprite>
+      <sprite>sprites\spr_triangle3</sprite>
     </sprites>
     <sprites name="inputdog">
       <sprite>sprites\sDogBark</sprite>
@@ -320,7 +324,7 @@
       <object>objects\obj_SharedTweener</object>
     </objects>
     <object>objects\obj_switcharea</object>
-    <object>objects\obj_triangleObstacle</object>
+    <object>objects\obj_baseObstacle</object>
   </objects>
   <rooms name="rooms">
     <rooms name="inputdog">
