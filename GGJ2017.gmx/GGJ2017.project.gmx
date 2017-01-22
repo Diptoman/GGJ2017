@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="16" name="datafiles">
+  <datafiles number="17" name="datafiles">
     <datafile>
       <name>Instructions.pdf</name>
       <exists>-1</exists>
@@ -21,7 +21,7 @@
       </ConfigOptions>
       <filename>Instructions.pdf</filename>
     </datafile>
-    <datafiles number="16" name="TweenGMS">
+    <datafiles number="17" name="TweenGMS">
       <datafile>
         <name>Starter_Guide.html</name>
         <exists>-1</exists>
@@ -109,23 +109,6 @@
       </datafile>
     </datafiles>
     <datafile>
-      <name>BGM_Medium.txt</name>
-      <exists>-1</exists>
-      <size>253</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>BGM_Medium.txt</filename>
-    </datafile>
-    <datafile>
       <name>BGM_Fast.txt</name>
       <exists>-1</exists>
       <size>261</size>
@@ -159,6 +142,23 @@
       </ConfigOptions>
       <filename>BGM_Slow.txt</filename>
     </datafile>
+    <datafile>
+      <name>BGM_Medium.txt</name>
+      <exists>-1</exists>
+      <size>342</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>BGM_Medium.txt</filename>
+    </datafile>
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Input Dog</extension>
@@ -168,6 +168,7 @@
   <sounds name="sound">
     <sound>sound\snd_bgm_fast</sound>
     <sound>sound\snd_bgm_slow</sound>
+    <sound>sound\snd_bgm_medium</sound>
     <sounds name="SFX">
       <sound>sound\snd_switchSuccess</sound>
       <sound>sound\snd_begin</sound>

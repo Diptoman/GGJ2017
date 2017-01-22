@@ -53,12 +53,14 @@ _mapBgmFast = scr_createGenerator();
 scr_readAudioData("BGM_Fast", _mapBgmFast);
 _mapBgmSlow = scr_createGenerator();
 scr_readAudioData("BGM_Slow", _mapBgmSlow);
+_mapBgmMedium = scr_createGenerator();
+scr_readAudioData("BGM_Medium", _mapBgmMedium);
 
-scr_setGenerator(_mapBgmSlow, snd_bgm_slow);
+scr_setGenerator(_mapBgmMedium, snd_bgm_medium);
 
 _pulse = false;
 
-_shifted = true;
+_shifted = 0;
 </string>
           </argument>
         </arguments>
@@ -176,7 +178,8 @@ alarm[0] = 180;
         TweenFire(obj_player2, y__, EaseOutQuad, TWEEN_MODE_ONCE, true, 0, .5, obj_player2.y, p1y);
         
         audio_play_sound(snd_switchSuccess,10,0);
-        _shifted = true;
+        rect = collision_rectangle(obj_player1.x - 16, obj_player1.y - 16, obj_player1.x + 16, obj_player1.y + 16, obj_switchzone, 0, 0);
+        rect._shifted = 2;
     }
 </string>
           </argument>
@@ -202,11 +205,11 @@ alarm[0] = 180;
             <kind>1</kind>
             <string>if (abs(abs(room_height/2 - obj_player1.y) - abs(room_height/2 - obj_player2.y)) &gt; 96)
 {
-    draw_text(0, 0, "OUT OF SYNC" + string(alarm[1]));
+    draw_text(0, 0, "OUT OF SYNC" + string(_shifted));
 }
 else
 {
-    draw_text(0, 0, "IN SYNC" + string(alarm[1]));
+    draw_text(0, 0, "IN SYNC" + string(_shifted));
 }
 </string>
           </argument>

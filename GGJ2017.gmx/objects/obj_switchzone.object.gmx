@@ -8,6 +8,52 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>_shifted = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>obj_control._shifted = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,23 +71,58 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_place(x,y,obj_player1) || instance_place(x,y,obj_player2))
+            <string>if ((collision_rectangle(x,y-384,x+sprite_width,y+384,obj_player1,0,0)) || (collision_rectangle(x,y-384,x+sprite_width,y+384,obj_player2,0,0)))
 {
     obj_control._timeScale = .25;
     if (!audio_is_playing(snd_timeSpeedDown))
         audio_play_sound(snd_timeSpeedDown,10, 0);
+    
+    if (_shifted == 0)
+       _shifted = 1; 
         
-    obj_control._shifted = false;
 }
 else
 {
     obj_control._timeScale = 1;
     
-    if (obj_control._shifted == false)
+    if (_shifted == 1)
+    {
         scr_die();
+    }
+       
+    _shifted = 0;
+
+       
 }
 
 x -= obj_control._baseSpeed * obj_control._levelModifier;
+
+    
+if (x &lt; -sprite_width)
+    instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
 </string>
           </argument>
         </arguments>
