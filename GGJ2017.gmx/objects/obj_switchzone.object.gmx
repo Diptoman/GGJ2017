@@ -28,10 +28,17 @@
             <string>if (instance_place(x,y,obj_player1) || instance_place(x,y,obj_player2))
 {
     obj_control._timeScale = .25;
+    if (!audio_is_playing(snd_timeSpeedDown))
+        audio_play_sound(snd_timeSpeedDown,10, 0);
+        
+    obj_control._shifted = false;
 }
 else
 {
     obj_control._timeScale = 1;
+    
+    if (obj_control._shifted == false)
+        scr_die();
 }
 
 x -= obj_control._baseSpeed * obj_control._levelModifier;

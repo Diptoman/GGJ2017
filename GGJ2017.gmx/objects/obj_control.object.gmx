@@ -57,6 +57,8 @@ scr_readAudioData("BGM_Slow", _mapBgmSlow);
 scr_setGenerator(_mapBgmSlow, snd_bgm_slow);
 
 _pulse = false;
+
+_shifted = true;
 </string>
           </argument>
         </arguments>
@@ -172,6 +174,9 @@ alarm[0] = 180;
         obj_player2.alarm[1] = room_speed/2;
         TweenFire(obj_player1, y__, EaseOutQuad, TWEEN_MODE_ONCE, true, 0, .5, obj_player1.y, p2y);
         TweenFire(obj_player2, y__, EaseOutQuad, TWEEN_MODE_ONCE, true, 0, .5, obj_player2.y, p1y);
+        
+        audio_play_sound(snd_switchSuccess,10,0);
+        _shifted = true;
     }
 </string>
           </argument>

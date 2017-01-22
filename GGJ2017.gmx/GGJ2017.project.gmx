@@ -168,6 +168,12 @@
   <sounds name="sound">
     <sound>sound\snd_bgm_fast</sound>
     <sound>sound\snd_bgm_slow</sound>
+    <sounds name="SFX">
+      <sound>sound\snd_switchSuccess</sound>
+      <sound>sound\snd_begin</sound>
+      <sound>sound\snd_timeSpeedDown</sound>
+      <sound>sound\snd_timeSpeedUp</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="External">
@@ -292,6 +298,7 @@
     <scripts name="Player">
       <script>scripts\scr_move.gml</script>
       <script>scripts\scr_pulse.gml</script>
+      <script>scripts\scr_die.gml</script>
     </scripts>
     <scripts name="Challenge">
       <script>scripts\scr_createObstacle.gml</script>

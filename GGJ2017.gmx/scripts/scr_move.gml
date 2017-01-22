@@ -8,6 +8,11 @@ image_index = playerSlot - 1;
 
 y += _yspd;
 
+if (y < 0) || (y > room_height)
+{
+    scr_die();
+}
+
 if (instance_position(x, y, obj_switchzone))
 {
     if (inputdog_pressed("Select", playerSlot))
