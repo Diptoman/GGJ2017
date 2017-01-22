@@ -176,14 +176,19 @@
       <sprite>sprites\spr_main</sprite>
       <sprite>sprites\spr_switcharea</sprite>
       <sprite>sprites\spr_triangle1</sprite>
+      <sprite>sprites\spr_pulse1</sprite>
       <sprite>sprites\spr_triangle2</sprite>
+      <sprite>sprites\spr_pulse2</sprite>
       <sprite>sprites\spr_round1</sprite>
+      <sprite>sprites\spr_pulse3</sprite>
       <sprite>sprites\spr_round2</sprite>
-      <sprite>sprites\spr_triangle3</sprite>
+      <sprite>sprites\spr_pulse4</sprite>
       <sprite>sprites\spr_slowArea</sprite>
       <sprite>sprites\spr_switchzone</sprite>
       <sprite>sprites\spr_floating1</sprite>
+      <sprite>sprites\spr_pulse5</sprite>
       <sprite>sprites\spr_floating2</sprite>
+      <sprite>sprites\spr_pulse6</sprite>
     </sprites>
     <sprites name="inputdog">
       <sprite>sprites\sDogBark</sprite>
@@ -286,6 +291,7 @@
     </scripts>
     <scripts name="Player">
       <script>scripts\scr_move.gml</script>
+      <script>scripts\scr_pulse.gml</script>
     </scripts>
     <scripts name="Challenge">
       <script>scripts\scr_createObstacle.gml</script>
@@ -333,6 +339,7 @@
     <object>objects\obj_switchzone</object>
     <object>objects\obj_floatingObstacle</object>
     <object>objects\obj_obsParent</object>
+    <object>objects\obj_pulse</object>
   </objects>
   <rooms name="rooms">
     <rooms name="inputdog">

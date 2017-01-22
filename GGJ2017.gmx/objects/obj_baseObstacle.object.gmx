@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>_size = 1;
 _yDir = 1;
+_pulsated = false;
 </string>
           </argument>
         </arguments>
@@ -49,10 +50,12 @@ _yDir = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale = .05 * _size;
-image_yscale = .05 * _size * _yDir;
+            <string>image_xscale = .2 * _size;
+image_yscale = .2 * _size * _yDir;
 
 x -= obj_control._baseSpeed * obj_control._levelModifier;
+
+scr_pulse();
 </string>
           </argument>
         </arguments>
