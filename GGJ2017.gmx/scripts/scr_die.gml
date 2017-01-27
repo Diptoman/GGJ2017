@@ -15,4 +15,8 @@ obj_player2.visible = false;
 obj_control._dead = true;
 
 audio_play_sound(snd_die, 10, 0);
+audio_play_sound(snd_shatter, 10, 0);
+
+instance_create(x,y,obj_shake);
+instance_create(x,y,obj_deathfade);
 }

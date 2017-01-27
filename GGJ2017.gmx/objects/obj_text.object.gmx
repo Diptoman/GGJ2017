@@ -84,13 +84,15 @@ draw_set_valign(fa_center);
 draw_set_font(fnt_UI);
 draw_set_color(c_white);
 
-draw_text_outline(x, y, _string, 1, c_black, 12, image_xscale);
-
+draw_text_outline(x, room_height/2, _string, 1, c_black, 12, image_xscale);
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_font(fnt_UI);
 draw_set_color(c_black);
+
+
+
 </string>
           </argument>
         </arguments>

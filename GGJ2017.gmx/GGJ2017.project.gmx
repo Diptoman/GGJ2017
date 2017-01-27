@@ -320,6 +320,8 @@
     <sound>sound\snd_bgm_level4_slow</sound>
     <sound>sound\snd_bgm_level4_medium</sound>
     <sound>sound\snd_bgm_level4_fast</sound>
+    <sound>sound\snd_shatter</sound>
+    <sound>sound\snd_menu</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="External">
@@ -362,9 +364,12 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bck_grid</background>
+    <background>background\bck_grid2</background>
+    <background>background\snd_bg3</background>
     <background>background\b_back</background>
     <background>background\b_hills</background>
     <background>background\b_objects</background>
+    <background>background\background7</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -523,12 +528,16 @@
       <object>objects\obj_score</object>
       <object>objects\obj_sync</object>
       <object>objects\obj_maxmult</object>
+      <object>objects\obj_tut</object>
     </objects>
+    <object>objects\obj_shake</object>
+    <object>objects\obj_deathfade</object>
   </objects>
   <rooms name="rooms">
     <rooms name="inputdog">
       <room>rooms\rInitInputManager</room>
       <room>rooms\rm_Menu</room>
+      <room>rooms\rm_tut</room>
       <room>rooms\rm_end</room>
       <room>rooms\rm_level1</room>
       <room>rooms\rm_level2</room>

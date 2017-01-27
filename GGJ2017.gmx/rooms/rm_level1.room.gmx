@@ -11,7 +11,7 @@
   <colour>4381183</colour>
   <showcolour>0</showcolour>
   <code>global.editPlayerSlot = -1;</code>
-  <enableViews>0</enableViews>
+  <enableViews>-1</enableViews>
   <clearViewBackground>0</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
@@ -41,7 +41,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="400" xport="0" yport="0" wport="1280" hport="800" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1366" hview="768" xport="0" yport="0" wport="1366" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_player1" x="544" y="432" name="inst_AE34D562" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_control" x="0" y="0" name="inst_52C87A52" locked="0" code="scr_createLevel(&quot;Level1_Fast&quot;, &quot;Level1_Medium&quot;, &quot;Level1_Fast&quot;, snd_bgm_slow, snd_bgm_medium, snd_bgm_fast);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_control" x="0" y="0" name="inst_52C87A52" locked="0" code="scr_createLevel(&quot;Level1_Slow&quot;, &quot;Level1_Medium&quot;, &quot;Level1_Fast&quot;, snd_bgm_slow, snd_bgm_medium, snd_bgm_fast);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player2" x="544" y="336" name="inst_2EF030DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

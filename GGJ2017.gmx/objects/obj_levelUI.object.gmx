@@ -101,7 +101,10 @@ if (alarm[0] &lt; 0)
 if (inputdog_pressed("Change") || inputdog_pressed("Enter"))
 {
     if (selected == _levelNum)
+    {
+        audio_stop_all();   
         room_goto(_level);
+    }
 }
 </string>
           </argument>
